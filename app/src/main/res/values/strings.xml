@@ -43,7 +43,7 @@
     <string name="maheshmaurya">Mahesh Maurya</string>
     <string name="code">+ 44</string>
     <string name="password">Password</string>
-    <string name="iagree">I agree to the Sava Terms and Conditions and Privacy Policy</string>
+    <string name="iagree">I agree to the Sava <font colour='#00bfff'>Terms and Conditions </font>and  <font colour='#00bfff'>Privacy Policy </font></string>
     <string name="alreadyhaveacc">Already have an account?</string>
     <string name="name">Name</string>
     <string name="plsverifyto">Please verify your mobile number to complete your sign up</string>

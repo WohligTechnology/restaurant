@@ -1,84 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="300dp"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
-    android:layout_marginTop="20dp"
+    android:layout_height="match_parent"
     android:background="@android:color/white">
 
-    <ImageView
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
-        android:id="@+id/img_left_arrow"
-        android:src="@drawable/arrowleftred" />
+        android:layout_marginBottom="20dp"
+        android:background="@android:color/white"
+        android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/signup"
-        android:layout_marginLeft="43dp"
-        android:layout_marginTop="12dp"
-        android:id="@+id/txt_sign1"
-        android:textSize="18sp"
-        android:textColor="@color/colorPrimaryDark"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/textView28"
-        android:layout_width="250dp"
-        android:layout_below="@+id/txt_sign1"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="55dp"
-        android:text="@string/plsverifyto"
-        android:textAlignment="center" />
+            <ImageView
+                android:id="@+id/img_left_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/arrowleftred" />
 
-    <EditText
-        android:id="@+id/editText6"
-        android:layout_width="50dp"
-        android:layout_height="38dp"
-        android:layout_alignStart="@+id/textView28"
-        android:layout_marginTop="110dp"
-        android:hint="@string/code" />
+            <TextView
+                android:id="@+id/txt_sign"
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/signup"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp" />
+        </LinearLayout>
 
-    <EditText
-        android:id="@+id/editText7"
-        android:layout_width="230dp"
-        android:layout_height="38dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="110dp"
-        android:layout_toEndOf="@+id/editText6"
-        android:hint="@string/mobileno" />
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:padding="20dp"
+            android:text="@string/plsverifyto"
+            android:textAlignment="center" />
 
-    <ImageView
-        android:id="@+id/imageView16"
-        android:layout_width="18dp"
-        android:layout_height="18dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="120dp"
-        android:src="@drawable/greymobile" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
 
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="170dp"
-        android:checked="false"
-        android:text="@string/iagree" />
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/greymobile" />
 
-    <Button
-        android:layout_width="350dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/checkBox3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="@string/signup"
-        android:textAllCaps="false"
-        android:textColor="@color/white_FFFFFF" />
+            <EditText
+                android:id="@+id/edt_code"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:hint="@string/code"
+                android:singleLine="true"
+                android:inputType="number"
+                android:textColorLink="@color/colorPrimaryDark" />
+
+            <EditText
+                android:id="@+id/edt_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:hint="Mobile Number"
+                android:inputType="phone"
+                android:singleLine="true"
+                android:textColorLink="@color/colorPrimaryDark" />
+
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:text="@string/iagree" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/signup"
+            android:textAllCaps="false"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="30dp"
+            android:textColor="@color/white_FFFFFF" />
+    </LinearLayout>
 </RelativeLayout>
