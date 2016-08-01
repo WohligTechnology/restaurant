@@ -1,65 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView android:layout_width="match_parent"
-    android:layout_height="300dp"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
     android:layout_marginTop="10dp"
-    tools:context=".AboutYouActivity"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    tools:context=".AboutYouActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="About You"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:textSize="17sp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dietary needs"
-        android:id="@+id/txt_dietary"
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="30dp"
-        android:textColor="@color/blue_fb_3b5998"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="About You"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-    <EditText
-        android:layout_width="270dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:id="@+id/edt_dietary"
-        android:layout_marginRight="20dp"
-        android:layout_below="@+id/txt_dietary"/>
+        <TextView
+            android:id="@+id/txt_dietary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="15dp"
+            android:text="Dietary needs"
+            android:textColor="@color/blue_fb_3b5998" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Household:"
-        android:layout_below="@+id/edt_dietary"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Annual Income"
-        android:layout_marginTop="220dp"
-        android:layout_marginLeft="30dp"
-        android:textColor="@color/blue_fb_3b5998"
-        android:id="@+id/textView30" />
+        <EditText
+            android:id="@+id/edt_dietary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_dietary"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="20dp" />
 
-    <android.support.v7.widget.AppCompatSpinner
-        android:layout_width="270dp"
-        android:layout_height="40dp"
-        style="@style/Widget.AppCompat.Spinner.Underlined"
-        android:entries="@array/income_arrays"
-        android:layout_below="@+id/textView30"
-        android:layout_alignStart="@+id/textView30">
-    </android.support.v7.widget.AppCompatSpinner>
-</RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edt_dietary"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="10dp"
+            android:text="Household:"
+            android:textColor="@color/blue_fb_3b5998" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="3"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="You"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="26 age"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Spinner
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="40dp"
+                android:layout_weight="1"
+                android:entries="@array/income_arrays" />
+
+            <Spinner
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="40dp"
+                android:layout_weight="1"
+                android:entries="@array/income_arrays" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/rounded_remove_button" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add more"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/plus" />
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="20dp"
+            android:text="Annual Income"
+            android:textColor="@color/blue_fb_3b5998" />
+
+        <Spinner
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="20dp"
+            android:entries="@array/income_arrays" />
+    </LinearLayout>
 </android.support.v7.widget.CardView>

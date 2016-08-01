@@ -1,9 +1,7 @@
 package com.wohlig.sava;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,10 +13,8 @@ import android.support.v8.renderscript.Allocation;
 import android.support.v8.renderscript.Element;
 import android.support.v8.renderscript.RenderScript;
 import android.support.v8.renderscript.ScriptIntrinsicBlur;
-import android.view.MenuItem;
 import android.widget.ImageView;
 
-import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 
 /**
@@ -63,11 +59,11 @@ public class NavDrawerActivity  extends AppCompatActivity
 
         imageView = (ImageView) navigationView.findViewById(R.id.img_blur);
 
-        Picasso
+      /*  Picasso
                 .with(this)
                 .load(R.drawable.offer1)
                 .transform(this)
-                .into(imageView);
+                .into(imageView);*/
 
     }
 

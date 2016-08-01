@@ -2,8 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/or"
@@ -15,22 +14,21 @@
         android:textColor="@color/black_000000"
         android:textSize="17sp" />
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_marginBottom="30dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-
-        >
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <RelativeLayout
             android:id="@+id/rel_fb"
-            android:layout_width="140dp"
+            android:layout_width="120dp"
             android:layout_height="50dp"
-            android:layout_alignParentLeft="true"
-            >
+            android:layout_marginRight="30dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -48,16 +46,14 @@
 
         <RelativeLayout
             android:id="@+id/rel_gplus"
-            android:layout_width="140dp"
+            android:layout_width="120dp"
             android:layout_height="50dp"
-            android:layout_alignParentRight="true"
-            >
+            android:layout_marginLeft="30dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/red_gplus_d34836" />
-
 
             <ImageView
                 android:layout_width="25dp"
@@ -67,7 +63,7 @@
                 android:src="@drawable/gpluswhite" />
 
         </RelativeLayout>
-    </RelativeLayout>
+    </LinearLayout>
 
 
 </LinearLayout>

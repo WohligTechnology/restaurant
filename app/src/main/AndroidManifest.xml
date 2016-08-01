@@ -5,16 +5,18 @@
     <application
         android:allowBackup="true"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:largeHeap="true"
+        android:theme="@style/AppTheme"
+        android:name="android.support.multidex.MultiDexApplication">
 
-        <activity android:name=".SingUpActivity">
+        <activity android:name=".NavDrawerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".NavDrawerActivity"></activity>
+        <activity android:name=".SingUpActivity"></activity>
         <activity android:name=".qr_3"></activity>
         <activity android:name=".qr4"></activity>
         <activity android:name=".qr2"></activity>

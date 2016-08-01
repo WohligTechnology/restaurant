@@ -126,31 +126,32 @@
             android:textColor="@color/colorPrimaryDark"
             android:textSize="18sp" />
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="30dp">
 
             <Button
                 android:id="@+id/bttn_resend_otp"
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
                 android:background="@color/dark_grey_98a1a5"
                 android:text="@string/resendotp"
                 android:textAllCaps="false"
+                android:layout_marginRight="40dp"
                 android:textColor="@color/white_FFFFFF"
                 android:textSize="12sp" />
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
                 android:background="@color/dark_grey_98a1a5"
                 android:text="@string/callme"
                 android:textAllCaps="false"
+                android:layout_marginLeft="40dp"
                 android:textColor="@color/white_FFFFFF" />
-        </RelativeLayout>
+        </LinearLayout>
 
     </LinearLayout>
 
