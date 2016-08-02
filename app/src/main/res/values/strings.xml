@@ -145,4 +145,7 @@
         <item>9 lakh - 10 lakh</item>
         <item>More than 10 lakhs</item>
     </string-array>
+    <string name="title_activity_navigation">Navigation</string>
+
+    <string name="action_settings">Settings</string>
 </resources>

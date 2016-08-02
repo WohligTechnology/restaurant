@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_above="@+id/welcome_fixed"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/welcome_fixed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/txt_skip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="@string/skipnproceed"
+                android:clickable="true"
+                android:textColor="@color/black_000000"
+                android:textSize="18sp" />
+
+            <com.matthewtamlin.sliding_intro_screen_library.indicators.DotIndicator
+                android:id="@+id/indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                app:numberOfDots="4"
+                app:selectedDotColor="@android:color/darker_gray"
+                app:selectedDotDiameter="10dp"
+                app:selectedDotIndex="0"
+                app:unselectedDotColor="@android:color/black"
+                app:unselectedDotDiameter="7dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <RelativeLayout
+                    android:id="@+id/rel_fb"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/blue_fb_3b5998" />
+
+                    <ImageView
+                        android:id="@+id/imageView17"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/fbwhite" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rel_gplus"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/red_gplus_d34836" />
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/gpluswhite" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <RelativeLayout
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/white" />
+
+                    <ImageView
+                        android:id="@+id/ivemail"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/emailicon"
+                        android:tint="@android:color/white" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/im_new"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/txt_new"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="I\'m New"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
+                         />
+
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

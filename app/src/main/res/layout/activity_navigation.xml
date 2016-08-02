@@ -9,9 +9,9 @@
     tools:openDrawer="start">
 
     <include
-        layout="@layout/activity_sava"
+        layout="@layout/app_bar_navigation"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></include>
+        android:layout_height="match_parent" />
 
 
     <android.support.design.widget.NavigationView
@@ -20,15 +20,8 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_main">
+        app:headerLayout="@layout/nav_header_navigation"
 
-        <ExpandableListView
-            android:id="@+id/lvExp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="160dp"
-            android:groupIndicator="@null" />
-
-    </android.support.design.widget.NavigationView>
+        app:menu="@menu/activity_navigation_drawer" />
 
 </android.support.v4.widget.DrawerLayout>

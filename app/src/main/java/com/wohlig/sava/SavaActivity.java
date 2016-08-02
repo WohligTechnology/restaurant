@@ -66,12 +66,13 @@ public class SavaActivity extends AppCompatActivity implements Transformation {
         tabLayout.setupWithViewPager(viewPager);
         setUpIcons();
 
+
         expListView = (ExpandableListView) findViewById(R.id.lvExp);
 
         // preparing list data
         prepareListData();
 
-        listAdapter = new ExpandableListAdapter(this, listDataChild, listDataHeader);
+        listAdapter = new ExpandableListAdapter(this, listDataHeader);
 
         // setting list adapter
         expListView.setAdapter(listAdapter);
@@ -113,7 +114,7 @@ public class SavaActivity extends AppCompatActivity implements Transformation {
         android.support.v7.app.ActionBarDrawerToggle toggle = new android.support.v7.app.ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
-
+        toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 
         ImageView imageView = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.img_blur);

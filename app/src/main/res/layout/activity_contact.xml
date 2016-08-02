@@ -82,7 +82,7 @@
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/email1"
-                android:layout_marginleft="5dp"
+                android:layout_marginLeft="5dp"
                 android:hint="+ 44" />
 
             <EditText

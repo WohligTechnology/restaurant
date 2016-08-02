@@ -2,6 +2,7 @@ package com.wohlig.sava;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,6 +16,7 @@ import android.support.v8.renderscript.RenderScript;
 import android.support.v8.renderscript.ScriptIntrinsicBlur;
 import android.widget.ImageView;
 
+import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 
 /**
@@ -28,6 +30,7 @@ public class NavDrawerActivity  extends AppCompatActivity
     private static final float BITMAP_SCALE = 0.4f;
     RenderScript rs;
 
+
     public NavDrawerActivity(){};
 
     public NavDrawerActivity(Context context){
@@ -40,30 +43,27 @@ public class NavDrawerActivity  extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nav_drawer);
 
-
-
-        /*Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.offer1);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.offer1);
         Bitmap blurredBitmap = transform(bitmap);
         imageView.setImageBitmap(blurredBitmap);
-*/
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
+//        drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 
         imageView = (ImageView) navigationView.findViewById(R.id.img_blur);
 
-      /*  Picasso
+        Picasso
                 .with(this)
                 .load(R.drawable.offer1)
                 .transform(this)
-                .into(imageView);*/
+                .into(imageView);
 
     }
 
@@ -106,7 +106,6 @@ public class NavDrawerActivity  extends AppCompatActivity
 
         return blurredBitmap;
     }
-
     @Override
     public String key() {
         return "blur";
