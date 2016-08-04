@@ -1,8 +1,14 @@
 package com.wohlig.sava;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import com.matthewtamlin.sliding_intro_screen_library.indicators.DotIndicator;
 
 /**
  * Created by Mahesh on 8/2/2016.
@@ -10,6 +16,10 @@ import android.support.v7.app.AppCompatActivity;
 public class Test extends AppCompatActivity {
     ViewPager viewPager;
     ViewPagerAdapter adapter;
+    DotIndicator indicator;
+    RelativeLayout im_new;
+    TextView skip;
+
 
 
     @Override
@@ -18,6 +28,45 @@ public class Test extends AppCompatActivity {
         setContentView(R.layout.fragment_welcome);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
+        indicator= (DotIndicator) findViewById(R.id.indicator);
+        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                int i= viewPager.getCurrentItem();
+                indicator.setSelectedItem(i,true);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+        im_new= (RelativeLayout) findViewById(R.id.im_new);
+        im_new.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(getApplicationContext(),SingUpActivity.class);
+                startActivity(i);
+
+            }
+        });
+        skip= (TextView) findViewById(R.id.txt_skip);
+        skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(getApplicationContext(),SavaActivity.class);
+                startActivity(i);
+            }
+        });
+
+
+
+
     }
     private void setupViewPager(ViewPager viewPager) {
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
@@ -27,6 +76,7 @@ public class Test extends AppCompatActivity {
         adapter.addFragment(new One(), "");
         viewPager.setAdapter(adapter);
     }
+
 
 
 }

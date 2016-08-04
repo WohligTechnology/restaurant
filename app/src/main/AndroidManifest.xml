@@ -8,22 +8,26 @@
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Test"
+        <activity
+            android:name=".Test"
             android:label="@string/title_activity_navigation"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
+
+        </activity>
+        <activity android:name=".SingUpActivity" />
+        <activity android:name=".NavDrawerActivity" />
+        <activity android:name=".qr_3" />
+        <activity android:name=".qr4" />
+        <activity android:name=".qr2" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SingUpActivity" />
-        <activity android:name=".NavDrawerActivity" />
-        <activity android:name=".qr_3" />
-        <activity android:name=".qr4" />
-        <activity android:name=".qr2" />
         <activity android:name=".secondPage" />
+        <activity android:name=".SavaActivity" />
 
         <meta-data
             android:name="com.google.android.gms.version"

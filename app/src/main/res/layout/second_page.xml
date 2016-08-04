@@ -128,64 +128,67 @@
 
         </RelativeLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/relative3"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_below="@+id/relative_transparent">
-
-            <ImageView
-                android:id="@+id/google_maps"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_alignParentBottom="true" />
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relative_transparent"
+            android:orientation="vertical">
 
             <RelativeLayout
                 android:id="@+id/relative_address"
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
+                android:layout_height="wrap_content"
                 android:background="@color/white_FFFFFF">
 
                 <TextView
                     android:id="@+id/address"
-                    android:layout_width="320dp"
-                    android:layout_height="43dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="10dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
                     android:text="@string/_1st_floor_the_destination_gm_road_chembur_east_mumbai_maharashtra"
                     android:textColor="#4C4C4C"
                     android:textSize="15sp" />
 
-                <ImageView
-                    android:id="@+id/navigation_icon"
-                    android:layout_width="35dp"
-                    android:layout_height="20dp"
-                    android:layout_alignParentEnd="true"
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/location" />
+                    android:layout_margin="10dp"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/distance"
-                    android:layout_width="48dp"
-                    android:layout_height="22dp"
-                    android:layout_alignEnd="@+id/navigation_icon"
-                    android:layout_alignRight="@+id/navigation_icon"
-                    android:layout_below="@+id/navigation_icon"
-                    android:layout_marginEnd="0dp"
-                    android:layout_marginRight="0dp"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/tenmiles"
-                    android:textColor="@color/dark_grey_98a1a5"
-                    android:textSize="18sp" />
+                    <ImageView
+                        android:id="@+id/navigation_icon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/location" />
+
+                    <TextView
+                        android:id="@+id/distance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tenmiles"
+                        android:textColor="@color/dark_grey_98a1a5"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
 
             </RelativeLayout>
 
+            <ImageView
+                android:id="@+id/google_maps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/sams_restaurent" />
 
-        </RelativeLayout>
+
+        </LinearLayout>
 
         <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -196,7 +199,6 @@
             android:layout_alignParentStart="true"
             android:layout_below="@+id/relative3"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
             card_view:cardCornerRadius="2dp">
 
             <RelativeLayout
@@ -1542,7 +1544,6 @@
             android:id="@+id/ccd_image"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:layout_alignEnd="@+id/ccd_loyalty"
             android:layout_alignParentTop="true"
             android:layout_alignRight="@+id/ccd_loyalty"
             android:layout_centerInParent="true"
