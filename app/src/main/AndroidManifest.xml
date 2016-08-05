@@ -19,6 +19,8 @@
         <activity android:name=".NavDrawerActivity" />
         <activity android:name=".qr_3" />
         <activity android:name=".qr4" />
+        <activity android:name=".qr1" />
+
         <activity android:name=".qr2" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

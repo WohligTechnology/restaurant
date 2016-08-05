@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.matthewtamlin.sliding_intro_screen_library.indicators.DotIndicator;
 
 /**
- * Created by Mahesh on 8/2/2016.
+ * Created by Mahesh on 8/tag2/2016.
  */
 public class Test extends AppCompatActivity {
     ViewPager viewPager;

@@ -1,6 +1,5 @@
 package com.wohlig.sava;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -8,7 +7,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +18,11 @@ public class qr_3 extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private int[] tabIcons = {
+            R.drawable.tag,
+            R.drawable.tag,
+            R.drawable.tag
+    };
 
 
     @Override
@@ -33,15 +36,21 @@ public class qr_3 extends AppCompatActivity {
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
-
+        setupTabIcons();
 
     }
 
+    private void setupTabIcons() {
+        tabLayout.getTabAt(0).setIcon(tabIcons[0]);
+        tabLayout.getTabAt(1).setIcon(tabIcons[1]);
+        tabLayout.getTabAt(2).setIcon(tabIcons[2]);
+    }
     public void setupViewPager(ViewPager upViewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new OneFragment(), "Card A");
-        adapter.addFragment(new TwoFragment(), "Card B");
-        adapter.addFragment(new ThreeFragment(), "Card C");
+        adapter.addFragment(new OneFragment(), "Card B");
+        adapter.addFragment(new OneFragment(), "Card C");
+
 
 
         viewPager.setAdapter(adapter);
