@@ -4,29 +4,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/rel_confirm"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@color/colorPrimaryDark">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_centerVertical="true"
-            android:gravity="center"
-            android:text="@string/confirm_redemption"
-            android:textColor="@color/white_FFFFFF"
-            android:textSize="20sp" />
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="horizontal"
+        android:padding="10dp">
 
         <ImageView
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
             android:onClick="qr2Page"
             android:src="@drawable/back_arrow" />
-    </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/confirm_redemption"
+            android:textColor="@color/white_FFFFFF"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
 
     <RelativeLayout
         android:id="@+id/rel_ccd"
@@ -159,8 +161,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/textView13"

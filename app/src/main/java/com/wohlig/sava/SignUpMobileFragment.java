@@ -1,19 +1,55 @@
 package com.wohlig.sava;
 
-import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * Created by Mahesh on 7/30/2016.
  */
-public class SignUpMobileFragment extends Fragment {
+public class SignUpMobileFragment extends AppCompatActivity {
     View view;
+    ImageView left;
+    ImageView edit;
+    Button next;
+    TextView digit;
+    int mobile;
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.activity_signup_mobile, container, false);
-        return view;
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.acitvity_mobile_verification);
+        Intent i = getIntent();
+        mobile = i.getIntExtra("mobile", 1);
+        left = (ImageView) findViewById(R.id.img_left_arrow);
+        left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        edit = (ImageView) findViewById(R.id.img_edit);
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        next = (Button) findViewById(R.id.next);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), SavaActivity.class);
+                startActivity(i);
+            }
+        });
+        digit = (TextView) findViewById(R.id.txt_digit);
+        digit.setText(mobile);
+
+
     }
 }

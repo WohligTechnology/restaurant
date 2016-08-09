@@ -15,7 +15,7 @@ import android.widget.TextView;
 /**
  * Created by adiam on 6/17/2016.
  */
-public class qr2 extends AppCompatActivity implements swipeListener{
+public class qr21 extends AppCompatActivity implements swipeListener{
 
     public static int MIN_WIDTH = 100;
 
@@ -69,7 +69,7 @@ public class qr2 extends AppCompatActivity implements swipeListener{
         imageView4.setVisibility(View.GONE);
         textView.setVisibility(View.GONE);
         oppositeView.setVisibility(View.GONE);
-     }
+    }
 
     @Override
     public void onSwipeRelease(View view, MotionEvent motionEvent) {
@@ -92,9 +92,10 @@ public class qr2 extends AppCompatActivity implements swipeListener{
 
         if (!flag) {
 
-                Intent intent = new Intent(this, qr_3.class);
+                Intent intent = new Intent(this, qr4.class);
                 startActivity(intent);
                 flag = true;
+
 
         }
     }
@@ -117,6 +118,7 @@ public class qr2 extends AppCompatActivity implements swipeListener{
     }
 
 }
+
 
 
 

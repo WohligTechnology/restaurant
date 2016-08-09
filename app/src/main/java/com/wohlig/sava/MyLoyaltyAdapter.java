@@ -52,8 +52,9 @@ public class MyLoyaltyAdapter extends RecyclerView.Adapter<MyLoyaltyAdapter.View
         this.dateTime = dateTime;
         this.loyaltyStamps1 = loyaltyStamps1;
         this.loyaltyStamps2 = loyaltyStamps2;
-        this.loyaltyStamps3 = loyaltyStamps3;this.loyaltyStamps4 = loyaltyStamps4;
-        this.loyaltyStamps8 = loyaltyStamps8;this.loyaltyStamps6 = loyaltyStamps6;
+        this.loyaltyStamps3 = loyaltyStamps3;
+        this.loyaltyStamps4 = loyaltyStamps4;
+        this.loyaltyStamps5 = loyaltyStamps5;this.loyaltyStamps6 = loyaltyStamps6;
         this.loyaltyStamps7 = loyaltyStamps7;this.loyaltyStamps8 = loyaltyStamps8;
         this.loyaltyStamps9 = loyaltyStamps9;this.loyaltyStamps10 = loyaltyStamps10;
         this.loyaltyStamps11 = loyaltyStamps11;this.loyaltyStamps12 = loyaltyStamps12;

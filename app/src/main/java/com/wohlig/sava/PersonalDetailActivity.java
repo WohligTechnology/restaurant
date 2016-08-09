@@ -21,7 +21,7 @@ public class PersonalDetailActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_personal_detail);
+        setContentView(R.layout.activity_my_profile);
         DateEdit = (EditText) findViewById(R.id.date);
         DateEdit.setOnClickListener(new View.OnClickListener() {
             @Override

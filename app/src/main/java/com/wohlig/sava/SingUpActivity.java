@@ -1,8 +1,7 @@
 package com.wohlig.sava;
 
 import android.app.Activity;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,29 +17,31 @@ public class SingUpActivity extends Activity {
     EditText edt_password;
     ImageView eye_open;
     Button button3;
+    ImageView left;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-        checkBox= (CheckBox) findViewById(R.id.checkBox);
-        edt_password= (EditText) findViewById(R.id.edt_password);
-        eye_open= (ImageView) findViewById(R.id.eye);
-        button3= (Button) findViewById(R.id.button3);
+        checkBox = (CheckBox) findViewById(R.id.checkBox);
+        edt_password = (EditText) findViewById(R.id.edt_password);
+        eye_open = (ImageView) findViewById(R.id.eye);
+        button3 = (Button) findViewById(R.id.button3);
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentManager fragmentManager = getFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                SignUpMobileFragment signUpMobileFragment = new SignUpMobileFragment();
-                fragmentTransaction.replace(R.id.container, signUpMobileFragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+                Intent i = new Intent(getApplicationContext(), SignUpMobileFragment.class);
+                startActivity(i);
             }
         });
-
-
+        left = (ImageView) findViewById(R.id.img_left_arrow);
+        left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 }

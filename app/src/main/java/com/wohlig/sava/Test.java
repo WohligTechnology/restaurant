@@ -19,6 +19,7 @@ public class Test extends AppCompatActivity {
     DotIndicator indicator;
     RelativeLayout im_new;
     TextView skip;
+    RelativeLayout fb,gplus,email;
 
 
 
@@ -63,7 +64,30 @@ public class Test extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
+        fb= (RelativeLayout) findViewById(R.id.rel_fb);
+        fb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(getApplicationContext(),MobileVerificationActivity.class);
+                startActivity(i);
+            }
+        });
+        gplus= (RelativeLayout) findViewById(R.id.rel_gplus);
+        gplus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(getApplicationContext(),MobileVerificationActivity.class);
+                startActivity(i);
+            }
+        });
+        email= (RelativeLayout) findViewById(R.id.email);
+        email.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(getApplicationContext(),MobileVerificationActivity.class);
+                startActivity(i);
+            }
+        });
 
 
 

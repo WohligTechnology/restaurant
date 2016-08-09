@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
-    card_view:cardCornerRadius="1dp">
+    card_view:cardCornerRadius="1dp"
+    android:onClick="showSecondPage1">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,8 +15,8 @@
 
         <ImageView
             android:id="@+id/img"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="-10dp"
             android:layout_marginTop="10dp"
@@ -24,7 +25,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:orientation="vertical">
 
             <RelativeLayout
@@ -57,7 +58,7 @@
 
                 <TextView
                     android:id="@id/home"
-                    android:layout_width="200dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:singleLine="true"
                     android:textColor="#B2B2B2" />

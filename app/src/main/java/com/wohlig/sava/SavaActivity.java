@@ -220,9 +220,22 @@ public class SavaActivity extends AppCompatActivity implements Transformation {
 
     public void showSecondPage(View view) {
         Intent intent = new Intent(this, secondPage.class);
+        intent.putExtra("stamp",1);
         startActivity(intent);
 
     }
+    public void showSecondPage1(View view) {
+        Intent intent = new Intent(this, secondPage.class);
+        intent.putExtra("stamp",2);
+        startActivity(intent);
+
+    }
+    public void loyalty(View view) {
+        Intent intent = new Intent(this, secondPage.class);
+        startActivity(intent);
+
+    }
+
 
 
     @Override

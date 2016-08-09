@@ -1,6 +1,7 @@
 package com.wohlig.sava;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.support.v8.renderscript.Allocation;
 import android.support.v8.renderscript.Element;
 import android.support.v8.renderscript.RenderScript;
 import android.support.v8.renderscript.ScriptIntrinsicBlur;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
@@ -29,6 +31,7 @@ public class NavDrawerActivity  extends AppCompatActivity
     private static final float BLUR_RADIUS = 25f;
     private static final float BITMAP_SCALE = 0.4f;
     RenderScript rs;
+    ImageView edit1;
 
 
     public NavDrawerActivity(){};
@@ -46,6 +49,14 @@ public class NavDrawerActivity  extends AppCompatActivity
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.offer1);
         Bitmap blurredBitmap = transform(bitmap);
         imageView.setImageBitmap(blurredBitmap);
+        edit1= (ImageView) findViewById(R.id.imageView27);
+        edit1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), PersonalDetailActivity.class);
+                startActivity(intent);
+            }
+        });
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -78,6 +89,7 @@ public class NavDrawerActivity  extends AppCompatActivity
             super.onBackPressed();
         }
     }
+
 
 
 

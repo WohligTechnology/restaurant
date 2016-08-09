@@ -1,20 +1,29 @@
 package com.wohlig.sava;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.support.v8.renderscript.Allocation;
+import android.support.v8.renderscript.Element;
+import android.support.v8.renderscript.RenderScript;
+import android.support.v8.renderscript.ScriptIntrinsicBlur;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Transformation;
 
 public class Navigation extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener , Transformation {
     NavigationView mNavigationView;
 
 
@@ -47,6 +56,13 @@ public class Navigation extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        ImageView imageView = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.img_blur);
+
+        Picasso
+                .with(Navigation.this)
+                .load(R.drawable.offer4)
+                .transform(Navigation.this)
+                .into(imageView);
     }
 
     @Override
@@ -104,5 +120,38 @@ public class Navigation extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    @Override
+    public Bitmap transform(Bitmap source) {
+
+        RenderScript rs = RenderScript.create(this);
+
+        Bitmap blurredBitmap = source.copy(Bitmap.Config.ARGB_8888, true);
+
+        // Allocate memory for Renderscript to work with
+        Allocation input = Allocation.createFromBitmap(rs, blurredBitmap, Allocation.MipmapControl.MIPMAP_FULL, Allocation.USAGE_SHARED);
+        Allocation output = Allocation.createTyped(rs, input.getType());
+
+        // Load up an instance of the specific script that we want to use.
+        ScriptIntrinsicBlur script = ScriptIntrinsicBlur.create(rs, Element.U8_4(rs));
+        script.setInput(input);
+
+        // Set the blur radius
+        script.setRadius(25);
+
+        // Start the ScriptIntrinisicBlur
+        script.forEach(output);
+
+        // Copy the output to the blurred bitmap
+        output.copyTo(blurredBitmap);
+
+        source.recycle();
+
+        return blurredBitmap;
+    }
+
+    @Override
+    public String key() {
+        return "blur";
     }
 }

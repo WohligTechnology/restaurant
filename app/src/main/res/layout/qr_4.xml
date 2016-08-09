@@ -21,14 +21,28 @@
             android:scaleType="fitXY"
             android:src="@drawable/store" />
 
-        <ImageView
-            android:id="@+id/share"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_margin="15dp"
-            android:src="@drawable/share" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_margin="5dp"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/back_arrow_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentLeft="true"
+                    android:onClick="qr4Page"
+                    android:src="@drawable/back_arrow" />
+
+                <ImageView
+                    android:id="@+id/share_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/share" />
+            </RelativeLayout>
 
         <TextView
             android:id="@+id/textView11"
@@ -369,7 +383,7 @@
             <RelativeLayout
                 android:id="@+id/relative_more_redemption_offers1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="60dp">
 
                 <TextView
                     android:id="@+id/more_redemption_offers1"
@@ -403,12 +417,12 @@
             <RelativeLayout
                 android:id="@+id/relative_free_beer1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:padding="5dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -416,6 +430,7 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_margin="5dp"
+                        android:layout_gravity="center_vertical"
                         android:src="@drawable/wine" />
 
                     <LinearLayout
@@ -472,7 +487,7 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -480,6 +495,7 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_margin="5dp"
+                        android:layout_gravity="center_vertical"
                         android:src="@drawable/idea_icon" />
 
                     <LinearLayout
@@ -528,7 +544,7 @@
             <RelativeLayout
                 android:id="@+id/relative_more_offers1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="60dp"
                 android:padding="5dp">
 
                 <TextView
