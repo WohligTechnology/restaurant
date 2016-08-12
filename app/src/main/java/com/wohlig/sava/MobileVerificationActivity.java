@@ -34,9 +34,7 @@ public class MobileVerificationActivity extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int mobile= Integer.parseInt(code1+" "+mob);
                 Intent i= new Intent(getApplicationContext(),SignUpMobileFragment.class);
-                i.putExtra("mobile",mobile) ;
                 startActivity(i);
             }
         });

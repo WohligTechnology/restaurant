@@ -11,7 +11,7 @@
     <include
         layout="@layout/activity_sava"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></include>
+        android:layout_height="match_parent" />
 
 
     <android.support.design.widget.NavigationView
@@ -20,15 +20,16 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_main">
+        app:layout="@layout/nav_draw">
 
-        <ExpandableListView
-            android:id="@+id/lvExp"
+        <fragment
+            android:id="@+id/frag_drawer"
+            android:name="com.wohlig.sava.Nav_draw"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="160dp"
-            android:groupIndicator="@null" />
+            tools:layout="@layout/nav_draw" />
 
     </android.support.design.widget.NavigationView>
+
 
 </android.support.v4.widget.DrawerLayout>

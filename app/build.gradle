@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.wohlig.sava"
-        minSdkVersion 14
+        minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -39,6 +39,8 @@ dependencies {
     compile'me.dm7.barcodescanner:zxing:1.8.4'
     compile 'com.android.support:multidex:1.0.0'
     compile 'com.matthew-tamlin:sliding-intro-screen:3.0.2'
-
-
+    compile 'com.doodle.android:android-material-chips:1.1.0'
 }
+
+
+

@@ -23,8 +23,6 @@ public class SignUpMobileFragment extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acitvity_mobile_verification);
-        Intent i = getIntent();
-        mobile = i.getIntExtra("mobile", 1);
         left = (ImageView) findViewById(R.id.img_left_arrow);
         left.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,11 +42,11 @@ public class SignUpMobileFragment extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), SavaActivity.class);
+                i.putExtra("value",2);
                 startActivity(i);
             }
         });
         digit = (TextView) findViewById(R.id.txt_digit);
-        digit.setText(mobile);
 
 
     }

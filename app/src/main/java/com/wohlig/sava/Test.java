@@ -61,6 +61,7 @@ public class Test extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i= new Intent(getApplicationContext(),SavaActivity.class);
+                i.putExtra("value",1);
                 startActivity(i);
             }
         });
@@ -94,10 +95,10 @@ public class Test extends AppCompatActivity {
     }
     private void setupViewPager(ViewPager viewPager) {
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new One(), "");
-        adapter.addFragment(new One(), "");
-        adapter.addFragment(new One(), "");
-        adapter.addFragment(new One(), "");
+        adapter.addFragment(new One(), "1");
+        adapter.addFragment(new One(), "2");
+        adapter.addFragment(new One(), "3");
+        adapter.addFragment(new One(), "4");
         viewPager.setAdapter(adapter);
     }
 

@@ -18,10 +18,8 @@ import android.support.v8.renderscript.RenderScript;
 import android.support.v8.renderscript.ScriptIntrinsicBlur;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.ExpandableListView;
 import android.widget.ImageView;
 
-import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 
 import java.util.ArrayList;
@@ -41,9 +39,6 @@ public class SavaActivity extends AppCompatActivity implements Transformation {
     private String[] mNavigationDrawerItemTitles;
     CharSequence mDrawerTitle;
     CharSequence mTitle;
-    ExpandableListAdapter listAdapter;
-    ExpandableListView expListView;
-    List<String> listDataHeader;
     HashMap<String, List<String>> listDataChild;
     ImageView imageView;
     ImageView expandableImageViewChild;
@@ -54,7 +49,8 @@ public class SavaActivity extends AppCompatActivity implements Transformation {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nav_drawer);
         mTitle = mDrawerTitle = getTitle();
-
+        Intent i= getIntent();
+        int k=i.getIntExtra("value",0);
 
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         setUpViewPager(viewPager);
@@ -66,19 +62,6 @@ public class SavaActivity extends AppCompatActivity implements Transformation {
         tabLayout.setupWithViewPager(viewPager);
         setUpIcons();
 
-
-        expListView = (ExpandableListView) findViewById(R.id.lvExp);
-
-        // preparing list data
-        prepareListData();
-
-        listAdapter = new ExpandableListAdapter(this, listDataHeader);
-
-        // setting list adapter
-        expListView.setAdapter(listAdapter);
-        if(listDataHeader.equals("Categories")){
-            imageView.setVisibility(View.VISIBLE);
-        }
 
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -117,58 +100,17 @@ public class SavaActivity extends AppCompatActivity implements Transformation {
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 
-        ImageView imageView = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.img_blur);
+
+      /*  ImageView imageView = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.img_blur);
 
         Picasso
                 .with(SavaActivity.this)
                 .load(R.drawable.offer4)
                 .transform(SavaActivity.this)
-                .into(imageView);
+                .into(imageView);*/
 
     }
 
-    private void prepareListData() {
-        listDataHeader = new ArrayList<String>();
-        listDataChild = new HashMap<String, List<String>>();
-
-        expandableImageViewChild = (ImageView) findViewById(R.id.img_ex_list);
-        expandableImageViewParent = (ImageView) findViewById(R.id.imageView_group);
-
-        // Adding child data
-        listDataHeader.add("Notifications");
-        listDataHeader.add("All Offers");
-        listDataHeader.add("Saved Offers");
-        listDataHeader.add("Categories");
-        listDataHeader.add("Setting");
-        listDataHeader.add("About");
-        listDataHeader.add("Help & Feedback");
-
-
-
-        // Adding child data
-        List<String> Categories = new ArrayList<String>();
-        Categories.add("Cafe");
-        Categories.add("Restaurant");
-        Categories.add("Lunch");
-        Categories.add("Bars");
-        Categories.add("Gas stations");
-
-        List<String> notification = new ArrayList<>();
-        List<String> alloffers = new ArrayList<>();
-        List<String> savedoffers = new ArrayList<>();
-        List<String> settings = new ArrayList<>();
-        List<String> about = new ArrayList<>();
-        List<String> help = new ArrayList<>();
-
-        listDataChild.put(listDataHeader.get(0),notification);
-        listDataChild.put(listDataHeader.get(1), alloffers);
-        listDataChild.put(listDataHeader.get(2), savedoffers);
-        listDataChild.put(listDataHeader.get(3), Categories);// Header, Child data
-        listDataChild.put(listDataHeader.get(4),settings);
-        listDataChild.put(listDataHeader.get(5),about);
-        listDataChild.put(listDataHeader.get(6),help);
-
-    }
 
 
     private void setUpIcons() {
